@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviso de Privacidad — Vitrinia</title>
+<meta name="description" content="Aviso de Privacidad de Vitrinia: qué datos guardamos, para qué, y los derechos que tienes sobre tu información.">
+
+<!-- Favicons / iconos -->
+<link rel="icon" type="image/svg+xml" href="assets/vitrinia-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta name="theme-color" content="#1b2435">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aviso de Privacidad — Vitrinia">
+<meta property="og:description" content="Qué datos guardamos, para qué, y los derechos que tienes sobre tu información.">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://vitrinia.com.mx/privacidad">
+<meta property="og:image" content="assets/favicon-512.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#1b2435; --tinta-2:#2a3650;
+    --azul:#2b62e0; --azul-700:#1f4ec2; --azul-100:#dbe6fb; --azul-50:#eef3fd;
+    --ambar:#f3a93a; --ambar-50:#fef5e6;
+    --verde:#16a34a; --verde-700:#0f7a37; --verde-50:#e7f6ee;
+    --lienzo:#f7f8fb; --linea:#e7ebf2; --gris:#5a667d;
+    --radio:18px; --sombra:0 18px 44px -18px rgba(27,36,53,.28);
+    --max:1120px;
+    --font-display:'Bricolage Grotesque',system-ui,sans-serif;
+    --font-body:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x:hidden; }
+  body{ font-family:var(--font-body); color:var(--tinta); background:#fff; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+  a{ color:inherit; text-decoration:none; }
+  img,svg{ display:block; }
+  .wrap{ width:100%; max-width:var(--max); margin:0 auto; padding:0 22px; }
+  section{ position:relative; }
+
+  h1,h2,h3{ font-family:var(--font-display); letter-spacing:-0.03em; line-height:1.08; font-weight:800; }
+  .eyebrow{ font-family:var(--font-display); font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--azul); display:inline-flex; align-items:center; gap:8px; white-space:nowrap; }
+  .eyebrow.amber{ color:#b9791a; }
+  .lead{ color:var(--gris); font-size:18px; }
+
+  /* ---------- Botones ---------- */
+  .btn{ font-family:var(--font-display); display:inline-flex; align-items:center; gap:10px; font-weight:600; font-size:16px; padding:15px 24px; border-radius:13px; border:none; cursor:pointer; transition:transform .15s ease, box-shadow .2s ease, background .2s ease; white-space:nowrap; }
+  .btn svg{ width:20px; height:20px; }
+  .btn-wa{ background:var(--verde); color:#fff; box-shadow:0 12px 24px -10px rgba(22,163,74,.7); }
+  .btn-wa:hover{ background:var(--verde-700); transform:translateY(-2px); }
+  .btn-ghost{ background:transparent; color:var(--tinta); border:1.5px solid var(--linea); }
+  .btn-ghost:hover{ border-color:var(--azul); color:var(--azul); }
+  .btn-sm{ padding:11px 18px; font-size:14.5px; border-radius:11px; }
+
+  /* ---------- Header ---------- */
+  header{ position:fixed; top:0; left:0; right:0; z-index:50; transition:background .3s ease, box-shadow .3s ease, padding .3s ease; padding:18px 0; }
+  header .bar{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .brand{ display:flex; align-items:center; gap:11px; }
+  .brand img{ height:52px; width:auto; transition:opacity .3s ease; }
+  .brand .logo-light{ position:absolute; opacity:1; }
+  .brand .logo-dark{ opacity:0; }
+  .brand-stack{ position:relative; display:flex; align-items:center; }
+  header.scrolled .brand .logo-light{ opacity:0; }
+  header.scrolled .brand .logo-dark{ opacity:1; }
+  @media(min-width:900px){ .brand img{ height:80px; } }
+  nav.links{ display:none; gap:30px; }
+  nav.links a{ font-weight:600; font-size:15px; color:rgba(255,255,255,.82); transition:color .2s ease; }
+  nav.links a:hover{ color:#fff; }
+  header.scrolled{ background:rgba(255,255,255,.86); backdrop-filter:saturate(180%) blur(14px); box-shadow:0 1px 0 var(--linea), 0 10px 30px -22px rgba(27,36,53,.5); padding:12px 0; }
+  header.scrolled nav.links a{ color:var(--gris); }
+  header.scrolled nav.links a:hover{ color:var(--tinta); }
+  /* CTA ghost del header: claro sobre el hero oscuro, oscuro en scrolled */
+  .header-cta.btn-ghost{ color:#fff; border-color:rgba(255,255,255,.4); transition:color .3s ease, border-color .3s ease, background .2s ease; }
+  .header-cta.btn-ghost:hover{ color:#fff; border-color:#fff; background:rgba(255,255,255,.1); }
+  header.scrolled .header-cta.btn-ghost{ color:var(--tinta); border-color:var(--linea); background:transparent; }
+  header.scrolled .header-cta.btn-ghost:hover{ color:var(--azul); border-color:var(--azul); background:transparent; }
+  .header-right{ display:flex; align-items:center; gap:12px; }
+
+  /* hamburguesa */
+  .nav-burger{ display:flex; align-items:center; justify-content:center; width:42px; height:42px; border:none; background:transparent; color:#fff; cursor:pointer; border-radius:11px; transition:background .2s ease, color .3s ease; }
+  .nav-burger svg{ width:26px; height:26px; }
+  header.scrolled .nav-burger{ color:var(--tinta); }
+  .nav-burger:hover{ background:rgba(255,255,255,.1); }
+  header.scrolled .nav-burger:hover{ background:var(--lienzo); }
+
+  /* drawer móvil */
+  .drawer{ position:fixed; top:0; right:0; bottom:0; width:min(320px,82vw); background:#fff; z-index:60;
+    box-shadow:-20px 0 60px -20px rgba(27,36,53,.4); transform:translateX(100%);
+    transition:transform .32s cubic-bezier(.22,1,.36,1); display:flex; flex-direction:column; padding:84px 26px 30px; }
+  .drawer.open{ transform:translateX(0); }
+  .drawer a{ font-family:var(--font-display); font-weight:600; font-size:18px; color:var(--tinta); padding:14px 0; border-bottom:1px solid var(--linea); transition:color .2s ease; }
+  .drawer a:hover{ color:var(--azul); }
+  .drawer .btn-wa{ margin-top:22px; justify-content:center; }
+  .drawer-close{ position:absolute; top:20px; right:20px; width:42px; height:42px; border:none; background:var(--lienzo); color:var(--tinta); border-radius:11px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .drawer-close svg{ width:24px; height:24px; }
+  .scrim{ position:fixed; inset:0; background:rgba(15,21,33,.45); z-index:55; opacity:0; visibility:hidden; transition:opacity .3s ease, visibility .3s ease; }
+  .scrim.open{ opacity:1; visibility:visible; }
+
+  /* ---------- Hero legal (bloque simple, sin imagen) ---------- */
+  .legal-hero{ background:var(--tinta); color:#fff; padding:150px 0 64px; }
+  @media(min-width:900px){ .legal-hero{ padding:172px 0 76px; } }
+  .legal-hero .eyebrow{ color:var(--ambar); margin-bottom:16px; }
+  .legal-hero h1{ font-size:clamp(30px,7vw,52px); color:#fff; }
+  .legal-hero .updated{ margin-top:18px; color:rgba(255,255,255,.72); font-size:16px; font-weight:600; display:inline-flex; align-items:center; gap:9px; }
+  .legal-hero .updated svg{ width:17px; height:17px; color:var(--ambar); flex-shrink:0; }
+
+  /* ---------- Cuerpo legal ---------- */
+  .legal{ background:#fff; padding:64px 0 88px; }
+  @media(min-width:900px){ .legal{ padding:80px 0 110px; } }
+  .legal-body{ max-width:760px; margin:0 auto; font-size:16.5px; line-height:1.8; color:var(--tinta-2); }
+  .legal-body .intro{ font-size:17px; color:var(--gris); }
+  .legal-body .intro.big{ font-family:var(--font-display); font-weight:800; font-size:clamp(22px,5vw,30px); color:var(--tinta); letter-spacing:-0.02em; line-height:1.18; }
+  .legal-body p{ margin-top:18px; }
+  .legal-body h2{ font-family:var(--font-display); color:var(--tinta); font-size:clamp(21px,4.4vw,27px); font-weight:800; letter-spacing:-0.02em; line-height:1.18; margin-top:52px; padding-top:8px; scroll-margin-top:96px; }
+  .legal-body h3{ font-family:var(--font-display); color:var(--tinta); font-size:18.5px; font-weight:800; letter-spacing:-0.01em; margin-top:30px; }
+  .legal-body ul{ list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:11px; }
+  .legal-body ul li{ position:relative; padding-left:26px; }
+  .legal-body ul li::before{ content:""; position:absolute; left:6px; top:.72em; width:7px; height:7px; border-radius:50%; background:var(--azul); }
+  .legal-body a{ color:var(--azul); font-weight:600; }
+  .legal-body a:hover{ color:var(--azul-700); text-decoration:underline; }
+  .legal-body strong{ color:var(--tinta); font-weight:700; }
+
+  /* índice de contenido */
+  .toc{ background:var(--lienzo); border:1px solid var(--linea); border-radius:var(--radio); padding:26px 28px; margin-top:14px; }
+  .toc-title{ font-family:var(--font-display); font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--azul); }
+  .toc ol{ list-style:none; margin:16px 0 0; padding:0; counter-reset:toc; display:grid; grid-template-columns:1fr; gap:2px; }
+  @media(min-width:640px){ .toc ol{ grid-template-columns:1fr 1fr; gap:2px 28px; } }
+  .toc ol li{ counter-increment:toc; }
+  .toc ol li a{ display:flex; gap:10px; align-items:baseline; padding:8px 0; font-size:15.5px; font-weight:600; color:var(--tinta-2); border-bottom:1px solid var(--linea); transition:color .2s ease; }
+  .toc ol li a:hover{ color:var(--azul); text-decoration:none; }
+  .toc ol li a::before{ content:counter(toc); font-family:var(--font-display); font-weight:800; color:var(--azul); font-size:13px; min-width:18px; }
+
+  /* definiciones (derechos ARCO, protección) */
+  .deflist{ margin-top:18px; display:flex; flex-direction:column; gap:16px; }
+  .deflist .item{ }
+  .deflist .item .term{ font-family:var(--font-display); font-weight:800; color:var(--tinta); font-size:16.5px; }
+  .deflist .item p{ margin-top:4px; }
+
+  /* tabla de datos */
+  .data-table{ width:100%; border-collapse:collapse; margin-top:20px; border:1px solid var(--linea); border-radius:var(--radio); overflow:hidden; }
+  .data-table th{ font-family:var(--font-display); text-align:left; background:var(--lienzo); color:var(--tinta); font-size:13px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:14px 18px; border-bottom:1px solid var(--linea); }
+  .data-table td{ padding:15px 18px; font-size:15.5px; color:var(--tinta-2); border-bottom:1px solid var(--linea); vertical-align:top; line-height:1.5; }
+  .data-table tr:last-child td{ border-bottom:none; }
+  .data-table td:first-child{ font-weight:700; color:var(--tinta); white-space:nowrap; }
+  @media(max-width:560px){
+    .data-table td:first-child{ white-space:normal; }
+    .data-table th, .data-table td{ padding:12px 14px; font-size:14.5px; }
+  }
+
+  /* callout destacado (versión corta, reportar abuso) */
+  .callout{ margin-top:24px; padding:18px 22px; border-radius:14px; background:var(--azul-50); border:1px solid var(--azul-100); font-size:15.5px; color:var(--tinta-2); }
+  .callout.amber{ background:var(--ambar-50); border-color:#f4d9a3; }
+  .callout strong{ color:var(--tinta); }
+
+  /* bloque de contacto final */
+  .contact-block{ margin-top:18px; padding:24px 26px; background:var(--lienzo); border:1px solid var(--linea); border-radius:var(--radio); font-size:16px; line-height:1.7; }
+  .contact-block .name{ font-family:var(--font-display); font-weight:800; font-size:18px; color:var(--tinta); }
+
+  /* Footer */
+  footer{ background:var(--tinta); color:rgba(255,255,255,.62); padding:54px 0 40px; }
+  .foot{ display:flex; flex-direction:column; gap:24px; }
+  .foot .brand img{ height:58px; width:auto; }
+  @media(min-width:900px){ .foot .brand img{ height:78px; } }
+  .foot-links{ display:flex; flex-wrap:wrap; gap:18px 26px; font-size:14.5px; font-weight:600; }
+  .foot-links a:hover{ color:#fff; }
+  .foot-bottom{ border-top:1px solid rgba(255,255,255,.1); padding-top:22px; display:flex; flex-wrap:wrap; gap:8px 16px; justify-content:space-between; font-size:13.5px; }
+  .foot-made{ display:inline-flex; align-items:center; gap:7px; }
+  .foot-made svg{ width:15px; height:15px; color:var(--ambar); }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header id="header" class="scrolled">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Vitrinia inicio">
+      <span class="brand-stack">
+        <img class="logo-light" src="assets/vitrinia-logo-horizontal-blanco.svg" alt="Vitrinia">
+        <img class="logo-dark" src="assets/vitrinia-logo-horizontal.svg" alt="Vitrinia">
+      </span>
+    </a>
+    <nav class="links">
+      <a href="index.html#como">Cómo funciona</a>
+      <a href="index.html#quien">Para quién</a>
+      <a href="index.html#precios">Precios</a>
+    </nav>
+    <div class="header-right">
+      <a class="btn btn-ghost btn-sm header-cta" href="https://wa.me/523343199172?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Vitrinia" target="_blank" rel="noopener">
+        <span id="hcta-ico"></span> Quiero mi página
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Menú" aria-expanded="false" aria-controls="drawer"></button>
+    </div>
+  </div>
+</header>
+
+<!-- drawer móvil -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" id="drawerClose" aria-label="Cerrar menú"></button>
+  <a href="index.html#como">Cómo funciona</a>
+  <a href="index.html#quien">Para quién</a>
+  <a href="index.html#precios">Precios</a>
+  <a class="btn btn-wa" href="https://wa.me/523343199172?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Vitrinia" target="_blank" rel="noopener">
+    <span id="drawer-wa"></span> Quiero ver mi página
+  </a>
+</aside>
+
+<!-- ===================== HERO LEGAL ===================== -->
+<section class="legal-hero">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1>Aviso de Privacidad</h1>
+    <div class="updated"><span id="upd-ico"></span> Última actualización: junio 2026 · Versión 1.0</div>
+  </div>
+</section>
+
+<!-- ===================== CUERPO ===================== -->
+<section class="legal">
+  <div class="wrap">
+    <div class="legal-body">
+
+      <p class="intro big">Tu negocio es tuyo. Tus datos también.</p>
+
+      <p class="intro">Vitrinia fue diseñado para ayudarte a tener presencia digital, no para quedarnos con tu información. Esta página explica exactamente qué guardamos, para qué y qué derechos tienes.</p>
+
+      <p class="intro"><strong>La versión corta:</strong> solo guardamos lo necesario para construir tu sitio, no vendemos tus datos y puedes pedirnos que los eliminen cuando quieras.</p>
+
+      <!-- Índice -->
+      <nav class="toc" aria-label="Contenido">
+        <div class="toc-title">Contenido</div>
+        <ol>
+          <li><a href="#s1">Quién es responsable</a></li>
+          <li><a href="#s2">Qué guardamos y para qué</a></li>
+          <li><a href="#s3">Qué no guardamos jamás</a></li>
+          <li><a href="#s4">Terceros que participan</a></li>
+          <li><a href="#s5">Cómo protegemos tu información</a></li>
+          <li><a href="#s6">Tus derechos ARCO</a></li>
+          <li><a href="#s7">Cookies y analítica</a></li>
+          <li><a href="#s8">Menores de edad</a></li>
+          <li><a href="#s9">Cambios a este aviso</a></li>
+          <li><a href="#s10">Contacto</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="s1">1. Quién es responsable</h2>
+      <p>El responsable del tratamiento de tus datos personales es Vitrinia, con domicilio en Guadalajara, Jalisco, México.</p>
+      <p>Puedes contactarnos en: <a href="mailto:contacto@vitrinia.com.mx">contacto@vitrinia.com.mx</a></p>
+
+      <h2 id="s2">2. Qué guardamos y para qué</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Dato</th>
+            <th>Para qué se usa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nombre</td>
+            <td>Identificarte y personalizar la comunicación.</td>
+          </tr>
+          <tr>
+            <td>Teléfono WhatsApp</td>
+            <td>Coordinar el proyecto y recibir solicitudes de cambio.</td>
+          </tr>
+          <tr>
+            <td>Correo electrónico <span style="font-weight:400;color:var(--gris);">(si lo proporcionas)</span></td>
+            <td>Comunicación del proyecto y notificaciones de renovación.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Solo guardamos lo que necesitamos para prestarte el servicio. Nada más.</p>
+
+      <h2 id="s3">3. Qué no guardamos jamás</h2>
+      <ul>
+        <li>Contraseñas de ningún tipo.</li>
+        <li>Datos de tarjetas de crédito o débito.</li>
+        <li>CLABE interbancaria completa.</li>
+        <li>Credenciales de acceso a redes sociales o Google.</li>
+        <li>Información financiera de tu negocio.</li>
+      </ul>
+      <div class="callout amber">Vitrinia <strong>nunca te pedirá contraseñas ni accesos bancarios.</strong> Si alguien lo hace en nombre de Vitrinia, repórtalo a <a href="mailto:contacto@vitrinia.com.mx">contacto@vitrinia.com.mx</a>.</div>
+
+      <h2 id="s4">4. Terceros que participan</h2>
+      <div class="deflist">
+        <div class="item">
+          <div class="term">WhatsApp</div>
+          <p>Canal principal de comunicación del proyecto. Los mensajes que intercambiamos transitan por los servidores de WhatsApp/Meta, que tienen su propia política de privacidad independiente de Vitrinia.</p>
+        </div>
+        <div class="item">
+          <div class="term">Proveedores de infraestructura tecnológica</div>
+          <p>Para operar el servicio utilizamos proveedores especializados en hospedaje web y almacenamiento de datos. Cada proveedor recibe únicamente los datos estrictamente necesarios para cumplir su función. Ninguno está autorizado a usar tu información para fines distintos a los aquí descritos.</p>
+        </div>
+      </div>
+      <p>No vendemos ni compartimos tus datos con terceros para fines publicitarios o de mercadotecnia.</p>
+
+      <h2 id="s5">5. Cómo protegemos tu información</h2>
+      <div class="deflist">
+        <div class="item">
+          <div class="term">Acceso restringido</div>
+          <p>Solo el equipo de Vitrinia tiene acceso a tus datos, y únicamente para la prestación del servicio contratado.</p>
+        </div>
+        <div class="item">
+          <div class="term">Comunicación cifrada</div>
+          <p>Toda comunicación entre tu navegador y nuestros servidores viaja cifrada con HTTPS/TLS.</p>
+        </div>
+        <div class="item">
+          <div class="term">Mínimo necesario</div>
+          <p>Solo recopilamos los datos imprescindibles para construir y mantener tu sitio. No creamos perfiles comerciales ni analizamos tu comportamiento.</p>
+        </div>
+      </div>
+
+      <h2 id="s6">6. Tus derechos ARCO</h2>
+      <p>De acuerdo con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), tienes derecho a:</p>
+      <div class="deflist">
+        <div class="item">
+          <div class="term">Acceso</div>
+          <p>Saber qué datos tuyos tenemos guardados.</p>
+        </div>
+        <div class="item">
+          <div class="term">Rectificación</div>
+          <p>Corregir datos inexactos o incompletos.</p>
+        </div>
+        <div class="item">
+          <div class="term">Cancelación</div>
+          <p>Pedirnos que eliminemos tus datos.</p>
+        </div>
+        <div class="item">
+          <div class="term">Oposición</div>
+          <p>Oponerte a que usemos tus datos para ciertos fines.</p>
+        </div>
+      </div>
+      <p>Para ejercer cualquiera de estos derechos, escribe a <a href="mailto:contacto@vitrinia.com.mx?subject=Solicitud%20ARCO">contacto@vitrinia.com.mx</a> con el asunto <strong>"Solicitud ARCO"</strong>. Respondemos en máximo 20 días hábiles.</p>
+
+      <h2 id="s7">7. Cookies y analítica</h2>
+      <p>vitrinia.com.mx no usa cookies de rastreo ni de publicidad. Sin píxeles de Meta ni Google Analytics. Si en el futuro se implementa alguna herramienta de analítica, se notificará en este aviso con anticipación.</p>
+
+      <h2 id="s8">8. Menores de edad</h2>
+      <p>Los servicios de Vitrinia están dirigidos a dueños de negocios, por lo que no están orientados a personas menores de 18 años. Si crees que un menor proporcionó datos a través de nuestro sitio, escríbenos a <a href="mailto:contacto@vitrinia.com.mx">contacto@vitrinia.com.mx</a> para eliminar su información.</p>
+
+      <h2 id="s9">9. Cambios a este aviso</h2>
+      <p>Actualizaremos la fecha de este aviso cuando el servicio cambie de forma relevante para la privacidad. Cambios significativos se notificarán directamente a los clientes activos vía WhatsApp.</p>
+
+      <h2 id="s10">10. Contacto</h2>
+      <div class="contact-block">
+        <div class="name">Vitrinia</div>
+        Guadalajara, Jalisco, México<br>
+        Correo: <a href="mailto:contacto@vitrinia.com.mx">contacto@vitrinia.com.mx</a><br>
+        Sitio: <a href="https://vitrinia.com.mx">vitrinia.com.mx</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html" aria-label="Vitrinia inicio">
+      <img src="assets/vitrinia-logo-horizontal-blanco.svg" alt="Vitrinia">
+    </a>
+    <nav class="foot-links">
+      <a href="index.html#como">Cómo funciona</a>
+      <a href="index.html#quien">Para quién</a>
+      <a href="index.html#precios">Precios</a>
+      <a href="terminos.html">Términos y Condiciones</a>
+      <a href="privacidad.html">Aviso de Privacidad</a>
+      <a href="https://wa.me/523343199172?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Vitrinia" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <div class="foot-bottom">
+      <span>vitrinia.com.mx · vitrinia.digital</span>
+      <span class="foot-made"><span id="heart"></span> Hecho en Guadalajara, Jalisco</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  /* ---------- WhatsApp icon (estilo Lucide) ---------- */
+  var WA = '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.02ZM12.05 20.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14 0-.31-.01-.47-.01-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>';
+  ['hcta-ico','drawer-wa'].forEach(function(id){ var e=document.getElementById(id); if(e) e.innerHTML = WA; });
+
+  /* ---------- Marcadores Lucide ---------- */
+  function lu(id, name){ var e = document.getElementById(id); if(e) e.innerHTML = '<i data-lucide="'+name+'"></i>'; }
+  lu('upd-ico','calendar-clock'); lu('heart','map-pin');
+
+  lucide.createIcons();
+  // tamaño de íconos
+  document.querySelectorAll('.updated svg, .foot-made svg').forEach(function(s){ s.setAttribute('width','17'); s.setAttribute('height','17'); });
+
+  /* ---------- Header scroll state (siempre claro en páginas legales) ---------- */
+  var header = document.getElementById('header');
+  function onScroll(){ header.classList.add('scrolled'); }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* ---------- Menú hamburguesa (drawer + scrim) ---------- */
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  var scrim = document.getElementById('scrim');
+  var drawerClose = document.getElementById('drawerClose');
+  function openMenu(){
+    drawer.classList.add('open'); scrim.classList.add('open');
+    burger.setAttribute('aria-expanded','true'); drawer.setAttribute('aria-hidden','false');
+  }
+  function closeMenu(){
+    drawer.classList.remove('open'); scrim.classList.remove('open');
+    burger.setAttribute('aria-expanded','false'); drawer.setAttribute('aria-hidden','true');
+  }
+  burger.addEventListener('click', function(){
+    drawer.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  drawerClose.addEventListener('click', closeMenu);
+  scrim.addEventListener('click', closeMenu);
+  drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+</script>
+</body>
+</html>

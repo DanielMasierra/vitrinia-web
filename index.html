@@ -262,6 +262,13 @@
   .foot-bottom{ border-top:1px solid rgba(255,255,255,.1); padding-top:22px; display:flex; flex-wrap:wrap; gap:8px 16px; justify-content:space-between; font-size:13.5px; }
   .foot-made{ display:inline-flex; align-items:center; gap:7px; }
   .foot-made svg{ width:15px; height:15px; color:var(--ambar); }
+  .foot-legal{ display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13.5px; font-weight:600; }
+  .foot-legal a{ color:rgba(255,255,255,.62); transition:color .2s ease; }
+  .foot-legal a:hover{ color:#fff; }
+  @media(max-width:639px){
+    .foot-bottom{ flex-direction:column; align-items:flex-start; gap:14px; }
+    .foot-legal{ order:3; }
+  }
 
   /* ---------- Animaciones (sistema MiVaroBot) ---------- */
   @keyframes fadeUp{ from{ opacity:0; transform:translateY(28px);} to{ opacity:1; transform:translateY(0);} }
@@ -529,8 +536,8 @@
           <li data-ico="check">Landing de 1 página, lista para celular</li>
           <li data-ico="check">Subdominio y hosting incluidos 1 año</li>
           <li data-ico="check">Botón flotante directo a WhatsApp</li>
-          <li data-ico="check">La conectamos a tu ficha de Google Maps</li>
-          <li data-ico="check">Activación en 24 horas + una ronda de ajustes</li>
+          <li data-ico="check">Agregamos el link de tu página a tu perfil de Google Maps</li>
+          <li data-ico="check">Activación en 24 horas + una ronda de ajustes (texto, logo y redes sociales)</li>
         </ul>
         <a class="btn btn-wa" href="https://wa.me/523343199172?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Vitrinia" target="_blank" rel="noopener"><span class="pwa"></span> Quiero el Básico</a>
         <p class="pnote">¿Quieres tu propio dominio? Te lo gestionamos como complemento (ej.: .com, .com.mx, .mx).</p>
@@ -542,9 +549,9 @@
         <ul>
           <li data-ico="check">Todo lo del Básico, ampliado</li>
           <li data-ico="check">Catálogo de hasta 15 servicios</li>
-          <li data-ico="check">Optimización completa de tu perfil de Google Maps</li>
-          <li data-ico="check">Actualizaciones por WhatsApp — nos escribes y lo cambiamos</li>
-          <li data-ico="check">Formulario de cotizaciones a tu correo</li>
+          <li data-ico="check">Perfil de Google Maps completo y optimizado</li>
+          <li data-ico="check">Cambios al sitio por WhatsApp — nos escribes y lo actualizamos</li>
+          <li data-ico="check">Formulario de contacto — tus clientes te escriben y tú recibes el mensaje en tu correo</li>
         </ul>
         <a class="btn btn-ghost" href="https://wa.me/523343199172?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Vitrinia" target="_blank" rel="noopener"><span class="pwa"></span> Quiero el Profesional</a>
       </div>
@@ -555,8 +562,8 @@
         <ul>
           <li data-ico="check">Sitio completo de varias secciones a la medida</li>
           <li data-ico="check">Catálogo de servicios o productos con fotos</li>
-          <li data-ico="check">Optimización de Google Maps + reseñas</li>
-          <li data-ico="check">Monitoreo 24/7 y respaldo anti-caídas</li>
+          <li data-ico="check">Perfil de Google Maps optimizado + estrategia para conseguir reseñas reales de tus clientes</li>
+          <li data-ico="check">Monitoreo de disponibilidad y respaldo — si tu sitio se cae, lo restauramos</li>
           <li data-ico="check">Soporte preferente y cambios prioritarios</li>
         </ul>
         <a class="btn btn-ghost" href="https://wa.me/523343199172?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Vitrinia" target="_blank" rel="noopener"><span class="pwa"></span> Quiero el Premium</a>
@@ -632,6 +639,10 @@
     </nav>
     <div class="foot-bottom">
       <span>vitrinia.com.mx · vitrinia.digital</span>
+      <nav class="foot-legal">
+        <a href="terminos.html">Términos y Condiciones</a>
+        <a href="privacidad.html">Aviso de Privacidad</a>
+      </nav>
       <span class="foot-made"><span id="heart"></span> Hecho en Guadalajara, Jalisco</span>
     </div>
   </div>
