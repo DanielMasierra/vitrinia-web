@@ -126,33 +126,95 @@
   .hero-meta svg{ width:17px; height:17px; color:var(--ambar); flex-shrink:0; }
   .hero-value{ margin-top:10px; color:rgba(255,255,255,.55); font-size:14px; }
 
-  /* mockup: resultado de Google */
-  .mock{ background:#fff; color:var(--tinta); border-radius:18px; box-shadow:0 40px 80px -30px rgba(0,0,0,.6); overflow:hidden; max-width:430px; width:100%; margin:0 auto; transform:rotate(-1.2deg); animation:floaty 4.5s ease-in-out infinite; }
-  .mock .mbar{ display:flex; align-items:center; gap:7px; padding:12px 15px; border-bottom:1px solid var(--linea); }
-  .mock .mdot{ width:10px; height:10px; border-radius:50%; background:#e2e6ee; }
-  .mock .msearch{ flex:1; margin-left:8px; background:var(--lienzo); border:1px solid var(--linea); border-radius:999px; padding:8px 14px; font-size:13px; color:var(--gris); display:flex; align-items:center; gap:8px; }
-  .mock .msearch svg{ width:14px; height:14px; color:var(--azul); }
-  .mock .mbody{ padding:16px 16px 18px; }
-  .mock .result{ border:1.5px solid var(--azul-100); background:var(--azul-50); border-radius:14px; padding:16px 15px 15px; position:relative; margin-top:6px; }
-  .mock .result.muted{ background:#fff; border-color:var(--linea); opacity:.66; margin-top:12px; padding:13px 15px; }
-  .mock .rtag{ position:absolute; top:-11px; left:14px; background:var(--ambar); color:#4a2e05; font-size:11px; font-weight:800; padding:3px 9px; border-radius:999px; letter-spacing:.02em; white-space:nowrap; }
-  .mock .rtitle{ font-weight:800; font-size:16px; letter-spacing:-0.01em; }
-  .mock .muted .rtitle{ font-size:14.5px; }
-  .mock .rstars{ color:var(--ambar); font-size:13px; margin-top:5px; letter-spacing:1px; display:flex; align-items:center; gap:4px; }
-  .mock .rstars .rstar-empty{ color:#d8dde7; letter-spacing:1px; }
-  .mock .rstars .rscore{ color:var(--tinta); font-weight:700; letter-spacing:0; }
-  .mock .rstars .rcount{ color:var(--gris); font-weight:600; letter-spacing:0; font-size:12.5px; }
-  .mock .rcat{ color:var(--gris); font-size:12.5px; font-weight:600; margin-top:6px; line-height:1.35; }
-  .mock .rstatus{ font-size:12.5px; font-weight:600; color:var(--gris); margin-top:4px; }
-  .mock .rstatus b{ color:var(--verde-700); font-weight:700; }
-  .mock .rnosite{ color:#c0473f; font-size:12.5px; font-weight:600; margin-top:6px; }
-  /* fila de acciones estilo Google local pack */
-  .mock .ractions{ display:flex; gap:8px; margin-top:13px; }
-  .mock .ract{ flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; padding:9px 4px; border:1px solid var(--linea); border-radius:11px; background:#fff; font-size:11px; font-weight:700; color:var(--azul); text-align:center; }
-  .mock .ract .ract-ic{ display:flex; }
-  .mock .ract svg{ width:17px; height:17px; }
-  .mock .ract-wa{ background:var(--verde); border-color:var(--verde); color:#fff; }
-  .mock .ract-wa svg{ color:#fff; }
+  /* ============================================================
+     Hero scene: recorrido del cliente
+     plano 1 (atrás)  → mini-ficha de Google Maps  = PARTIDA
+     plano 2 (centro) → página web del negocio     = PROTAGONISTA
+     plano 3 (frente) → burbuja de WhatsApp entrando
+     ============================================================ */
+  .scene{ position:relative; width:100%; max-width:400px; margin:0 auto; padding:18px 0 24px; }
+  /* reserva de alto para que los planos absolutos no colapsen el contenedor.
+     abarca la página completa + el chat saliendo por abajo, dejando aire al fondo */
+  .scene-spacer{ width:100%; aspect-ratio:400 / 540; }
+
+  /* tipografía base estilo "Google" reutilizada por la ficha de Maps */
+  .scene-stars{ color:var(--ambar); font-size:13px; letter-spacing:1px; display:inline-flex; align-items:center; gap:4px; }
+  .scene-stars .sc-score{ color:var(--tinta); font-weight:700; letter-spacing:0; }
+  .scene-stars .sc-count{ color:var(--gris); font-weight:600; letter-spacing:0; font-size:12px; }
+
+  .scene-map{ position:absolute; top:8px; left:0; width:62%; max-width:248px; z-index:1;
+    background:#fff; color:var(--tinta); border-radius:16px; border:1px solid var(--linea);
+    box-shadow:0 26px 50px -28px rgba(27,36,53,.5); overflow:hidden;
+    transform:rotate(-3deg); animation:floaty 5.4s ease-in-out infinite; }
+  .scene-map .map-bar{ display:flex; align-items:center; gap:6px; padding:9px 11px; border-bottom:1px solid var(--linea); }
+  .scene-map .map-dot{ width:7px; height:7px; border-radius:50%; background:#e2e6ee; }
+  .scene-map .map-search{ flex:1; margin-left:5px; background:var(--lienzo); border:1px solid var(--linea); border-radius:999px; padding:5px 10px; font-size:11px; color:var(--gris); display:flex; align-items:center; gap:6px; min-width:0; }
+  .scene-map .map-search span:last-child{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .scene-map .map-search svg{ width:12px; height:12px; color:var(--azul); flex-shrink:0; }
+  .scene-map .map-card{ padding:12px 12px 13px; }
+  .scene-map .map-tag{ display:inline-block; background:var(--ambar); color:#4a2e05; font-size:10px; font-weight:800; padding:2px 8px; border-radius:999px; letter-spacing:.02em; margin-bottom:7px; }
+  .scene-map .map-name{ font-weight:800; font-size:14px; letter-spacing:-0.01em; }
+  .scene-map .map-cat{ color:var(--gris); font-size:11px; font-weight:600; margin-top:4px; }
+  .scene-map .map-actions{ display:flex; gap:6px; margin-top:11px; }
+  .scene-map .map-act{ flex:1; display:flex; align-items:center; justify-content:center; gap:5px; padding:6px 4px; border:1px solid var(--linea); border-radius:9px; background:#fff; font-size:10.5px; font-weight:700; color:var(--azul); }
+  .scene-map .map-act svg{ width:13px; height:13px; }
+  .scene-map .map-act.is-wa{ background:var(--verde); border-color:var(--verde); color:#fff; }
+  .scene-map .map-act.is-wa svg{ color:#fff; }
+
+  /* ---------- Plano 2: la página web del negocio (protagonista) ----------
+     absolute, centro-derecha: su esquina superior-izquierda MONTA sobre la
+     esquina inferior-derecha de la ficha de Maps → pila diagonal traslapada */
+  .scene-site{ position:absolute; z-index:3; top:124px; right:0; width:80%; max-width:332px;
+    background:#fff; color:var(--tinta); border-radius:20px; overflow:hidden;
+    box-shadow:0 44px 84px -30px rgba(27,36,53,.62); border:1px solid var(--linea);
+    transform:rotate(1.4deg); animation:floaty 4.5s ease-in-out infinite; }
+  /* barra de navegador minimal */
+  .scene-site .site-bar{ display:flex; align-items:center; gap:6px; padding:9px 13px; background:var(--lienzo); border-bottom:1px solid var(--linea); }
+  .scene-site .site-dot{ width:8px; height:8px; border-radius:50%; background:#e2e6ee; }
+  .scene-site .site-url{ flex:1; margin-left:6px; background:#fff; border:1px solid var(--linea); border-radius:999px; padding:4px 11px; font-size:11px; font-weight:600; color:var(--gris); display:flex; align-items:center; gap:5px; }
+  .scene-site .site-url svg{ width:11px; height:11px; color:var(--verde); }
+  /* encabezado/hero de la landing — listo para sustituir por <img class="site-hero-img"> */
+  .scene-site .site-hero{ position:relative; height:118px; padding:16px;
+    display:flex; flex-direction:column; justify-content:flex-end; color:#fff; overflow:hidden;
+    background:linear-gradient(150deg,#161d2c 0%,var(--tinta) 52%,var(--azul-700) 130%); }
+  .scene-site .site-hero-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+  .scene-site .site-hero::after{ content:""; position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg,rgba(22,29,44,.05) 0%,rgba(22,29,44,.55) 100%); }
+  .scene-site .site-hero > *{ position:relative; z-index:2; }
+  .scene-site .site-eyebrow{ font-family:var(--font-display); font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--ambar); }
+  .scene-site .site-title{ font-family:var(--font-display); font-size:19px; font-weight:800; letter-spacing:-0.02em; line-height:1.1; margin-top:4px; }
+  .scene-site .site-sub{ font-size:11px; font-weight:600; color:rgba(255,255,255,.82); margin-top:4px; display:inline-flex; align-items:center; gap:5px; }
+  .scene-site .site-sub svg{ width:12px; height:12px; color:var(--ambar); }
+  /* cuerpo: lista de servicios */
+  .scene-site .site-body{ padding:15px 16px 17px; }
+  .scene-site .site-label{ font-family:var(--font-display); font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--gris); }
+  .scene-site .site-services{ list-style:none; margin:11px 0 0; padding:0; display:flex; flex-direction:column; gap:9px; }
+  .scene-site .site-services li{ display:flex; align-items:center; gap:11px; }
+  .scene-site .svc-ico{ width:34px; height:34px; border-radius:10px; background:var(--azul-50); color:var(--azul); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .scene-site .svc-ico svg{ width:18px; height:18px; }
+  .scene-site .svc-txt{ font-weight:700; font-size:13.5px; color:var(--tinta); letter-spacing:-0.01em; }
+  .scene-site .svc-txt small{ display:block; font-weight:600; font-size:11px; color:var(--gris); margin-top:1px; letter-spacing:0; }
+  .scene-site .site-cta{ display:flex; align-items:center; justify-content:center; gap:8px; margin-top:15px;
+    background:var(--verde); color:#fff; font-family:var(--font-display); font-weight:600; font-size:13.5px;
+    padding:11px 16px; border-radius:12px; box-shadow:0 12px 24px -12px rgba(22,163,74,.7); }
+  .scene-site .site-cta svg{ width:16px; height:16px; }
+
+  /* ---------- Plano 3: mensaje de WhatsApp entrando (frente) ----------
+     anclado por TOP a la esquina inferior-derecha de la página (que llega a ~462px),
+     sobresaliendo limpio del borde — despejado de la lista de servicios y del CTA verde */
+  .scene-chat{ position:absolute; right:-22px; top:442px; z-index:4; width:68%; max-width:266px;
+    display:flex; align-items:flex-end; gap:9px;
+    animation:floaty 5s ease-in-out infinite; animation-delay:-1.4s; }
+  .scene-chat .chat-avatar{ width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    background:var(--verde); color:#fff; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 22px -10px rgba(22,163,74,.7); }
+  .scene-chat .chat-avatar svg{ width:18px; height:18px; }
+  .scene-chat .chat-bubble{ position:relative; background:#fff; border:1px solid var(--linea);
+    border-radius:16px 16px 16px 5px; padding:11px 13px; box-shadow:0 22px 44px -22px rgba(27,36,53,.5); }
+  .scene-chat .chat-from{ font-size:10.5px; font-weight:800; color:var(--verde-700); letter-spacing:.01em; }
+  .scene-chat .chat-text{ font-size:13px; font-weight:600; color:var(--tinta); line-height:1.4; margin-top:2px; }
+  .scene-chat .chat-meta{ display:flex; align-items:center; justify-content:flex-end; gap:3px; margin-top:5px; font-size:10px; font-weight:600; color:var(--gris); }
+  .scene-chat .chat-meta svg{ width:13px; height:13px; color:var(--azul); }
 
   /* ---------- Secciones genéricas ---------- */
   .sec{ padding:84px 0; }
@@ -297,7 +359,7 @@
   @media (prefers-reduced-motion:reduce){
     .reveal{ opacity:1; transform:none; transition:none; }
     .no-reveal{ animation:none !important; opacity:1 !important; transform:none !important; }
-    .pulse, .mock{ animation:none; }
+    .pulse, .scene-map, .scene-site, .scene-chat{ animation:none; }
   }
 
   /* ---------- Responsive ---------- */
@@ -313,12 +375,20 @@
     .hero{ padding:150px 0 110px; }
     .hero-grid{ grid-template-columns:1.05fr .95fr; gap:40px; }
     .hero p.lead{ font-size:20px; }
-    .mock{ transform:rotate(-2deg); animation:floaty-lg 4.5s ease-in-out infinite; }
-    @keyframes floaty-lg{ 0%,100%{ transform:rotate(-2deg) translateY(0);} 50%{ transform:rotate(-2deg) translateY(-11px);} }
+  }
+  /* escena: en pantallas medianas la columna se estrecha — encoge la composición
+     sin romper la superposición de los 3 planos (todo es % del .scene) */
+  @media(max-width:979px){
+    .scene{ max-width:380px; }
   }
   @media(max-width:639px){
-    .mock-stage{ display:none; }
-    .hero-grid{ gap:0; }
+    /* en móvil la escena se muestra y se centra; sin desbordes ni encimados feos */
+    .hero-grid{ gap:34px; }
+    .scene{ max-width:340px; }
+    .scene-chat{ right:0; }
+  }
+  @media(max-width:360px){
+    .scene{ max-width:300px; }
   }
 </style>
 </head>
@@ -377,29 +447,68 @@
     </div>
 
     <div class="mock-stage no-reveal">
-      <div class="mock" aria-hidden="true">
-        <div class="mbar">
-          <span class="mdot"></span><span class="mdot"></span><span class="mdot"></span>
-          <span class="msearch"><span id="mk-search"></span> taller de autoclimas en zapopan</span>
-        </div>
-        <div class="mbody">
-          <div class="result">
-            <span class="rtag">Tu negocio</span>
-            <div class="rtitle">Autoclimas del Valle</div>
-            <div class="rstars">★★★★★ <span class="rscore">4.9</span> <span class="rcount">(128)</span></div>
-            <div class="rcat">Taller de aire acondicionado automotriz · Zapopan</div>
-            <div class="rstatus"><b>Abierto ahora</b> · Cierra 7 p.m.</div>
-            <div class="ractions">
-              <span class="ract"><span class="ract-ic" data-ico="navigation"></span><span class="ract-lbl">Cómo llegar</span></span>
-              <span class="ract"><span class="ract-ic" data-ico="globe"></span><span class="ract-lbl">Sitio web</span></span>
-              <a class="ract ract-wa"><span id="mk-wa"></span><span class="ract-lbl">WhatsApp</span></a>
+      <div class="scene" aria-hidden="true">
+        <div class="scene-spacer"></div>
+
+        <!-- Plano 1 · punto de partida: ficha de Google Maps -->
+        <div class="scene-map">
+          <div class="map-bar">
+            <span class="map-dot"></span><span class="map-dot"></span><span class="map-dot"></span>
+            <span class="map-search"><span id="mk-search"></span><span>taller de autoclimas en zapopan</span></span>
+          </div>
+          <div class="map-card">
+            <span class="map-tag">Tu negocio</span>
+            <div class="map-name">Autoclimas del Valle</div>
+            <div class="scene-stars">★★★★★ <span class="sc-score">4.9</span> <span class="sc-count">(128)</span></div>
+            <div class="map-cat">Taller de aire acondicionado · Zapopan</div>
+            <div class="map-actions">
+              <span class="map-act"><span data-ico="globe"></span> Sitio web</span>
+              <a class="map-act is-wa"><span id="mk-wa"></span> WhatsApp</a>
             </div>
           </div>
-          <div class="result muted">
-            <div class="rtitle">Otro taller de la zona</div>
-            <div class="rstars">★★★★<span class="rstar-empty">★</span> <span class="rscore">4.1</span> <span class="rcount">(12)</span></div>
-            <div class="rcat">Taller mecánico · Zapopan</div>
-            <div class="rnosite">sin sitio web</div>
+        </div>
+
+
+        <!-- Plano 2 · protagonista: la página web del negocio -->
+        <div class="scene-site">
+          <div class="site-bar">
+            <span class="site-dot"></span><span class="site-dot"></span><span class="site-dot"></span>
+            <span class="site-url"><span id="sc-lock"></span>autoclimasdelvalle.com.mx</span>
+          </div>
+          <!-- site-hero: para foto real sustituye el gradiente por
+               <img class="site-hero-img" src="..." alt="..."> como primer hijo -->
+          <div class="site-hero">
+            <span class="site-eyebrow">Aire acondicionado automotriz</span>
+            <div class="site-title">Autoclimas del Valle</div>
+            <div class="site-sub"><span id="sc-pin"></span> Zapopan · Abierto ahora</div>
+          </div>
+          <div class="site-body">
+            <div class="site-label">Nuestros servicios</div>
+            <ul class="site-services">
+              <li>
+                <span class="svc-ico" data-ico="snowflake"></span>
+                <span class="svc-txt">Recarga de gas<small>Tu A/C enfría como nuevo</small></span>
+              </li>
+              <li>
+                <span class="svc-ico" data-ico="gauge"></span>
+                <span class="svc-txt">Diagnóstico de A/C<small>Detectamos la falla a fondo</small></span>
+              </li>
+              <li>
+                <span class="svc-ico" data-ico="settings"></span>
+                <span class="svc-txt">Compresores<small>Reparación y cambio</small></span>
+              </li>
+            </ul>
+            <div class="site-cta"><span id="sc-wa"></span> Escríbenos por WhatsApp</div>
+          </div>
+        </div>
+
+        <!-- Plano 3 · mensaje de WhatsApp entrando -->
+        <div class="scene-chat">
+          <span class="chat-avatar"><span id="sc-chat-wa"></span></span>
+          <div class="chat-bubble">
+            <div class="chat-from">Cliente nuevo</div>
+            <div class="chat-text">Buenas, vi su página. ¿Hacen carga de gas hoy?</div>
+            <div class="chat-meta">9:41 a.m. <span id="sc-check"></span></div>
           </div>
         </div>
       </div>
@@ -654,14 +763,19 @@
   var WA = '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.02ZM12.05 20.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14 0-.31-.01-.47-.01-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>';
   ['hcta-ico','hero-wa','final-wa','drawer-wa'].forEach(function(id){ var e=document.getElementById(id); if(e) e.innerHTML = WA; });
   document.querySelectorAll('.pwa').forEach(function(el){ el.innerHTML = WA; var s=el.querySelector('svg'); s.setAttribute('width','18'); s.setAttribute('height','18'); });
-  var mkWa = document.getElementById('mk-wa');
-  if(mkWa){ mkWa.innerHTML = WA; mkWa.querySelector('svg').setAttribute('width','17'); mkWa.querySelector('svg').setAttribute('height','17'); }
+  // WhatsApp en la escena del hero (ficha Maps, CTA de la landing, avatar del chat)
+  [['mk-wa',17],['sc-wa',16],['sc-chat-wa',18]].forEach(function(p){
+    var e=document.getElementById(p[0]);
+    if(e){ e.innerHTML = WA; var s=e.querySelector('svg'); s.setAttribute('width',p[1]); s.setAttribute('height',p[1]); }
+  });
 
   /* ---------- Marcadores Lucide ---------- */
   function lu(id, name){ var e = document.getElementById(id); if(e) e.innerHTML = '<i data-lucide="'+name+'"></i>'; }
   lu('hm-ico','badge-check'); lu('mk-search','search');
   lu('ce-ico','workflow'); lu('qe-ico','users'); lu('pe-ico','tag'); lu('oe-ico','layers'); lu('ge-ico','trending-up');
   lu('ph-ico','mail'); lu('heart','map-pin');
+  // escena del hero: candado de la URL, pin del sub-encabezado, doble-check del mensaje
+  lu('sc-lock','lock'); lu('sc-pin','map-pin'); lu('sc-check','check-check');
 
   // íconos por data-ico (pasos, chips, gpoints, vpoints, checks de precios)
   document.querySelectorAll('[data-ico]').forEach(function(el){
